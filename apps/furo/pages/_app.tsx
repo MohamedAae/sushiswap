@@ -40,6 +40,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
       router.events.off('hashChangeComplete', handler)
     }
   }, [router.events])
+  const showLayout = router.pathname === '/kynos' ? false : true;
   return (
     <>
       <Head>
@@ -72,11 +73,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
           <ThemeProvider>
             <App.Shell>
               <DefaultSeo {...SEO} />
-              <Header />
+              {showLayout && <Header />}
               <MulticallUpdaters chainIds={SUPPORTED_CHAINS} />
               <TokenListUpdaters chainIds={SUPPORTED_CHAINS} />
               <Component {...pageProps} />
-              <App.Footer />
+              {showLayout && <App.Footer />}
             </App.Shell>
             <ToastContainer className="mt-[50px]" />
           </ThemeProvider>
