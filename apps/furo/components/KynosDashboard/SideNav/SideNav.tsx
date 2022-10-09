@@ -78,7 +78,7 @@ export const MobileSideNav = () => {
             leave="transition ease-out duration-75 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
-            className="z-20 w-[300px] lg:hidden"
+            className="z-20 w-[300px] absolute lg:hidden"
         >
           <Nav/>
         </Transition>

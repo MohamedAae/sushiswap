@@ -37,5 +37,6 @@ export * from './tooltip'
 export * from './types'
 export * from './typography'
 export * from './useBreakpoint'
+export * from './kynos'
 // Re-export classnames for convenience
 export { default as classNames } from 'classnames'
