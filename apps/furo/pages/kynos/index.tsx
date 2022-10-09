@@ -1,5 +1,5 @@
 import {NextSeo} from 'next-seo'
-import {KynosDashboard} from "../components/KynosDashboard";
+import {KynosDashboard} from "../../components/KynosDashboard";
 
 export default function KynosPage() {
 
