@@ -21,7 +21,7 @@ export const SelectOption: FC<SelectOptionProps> = forwardRef(({ className, chil
       className={({ active }: { active: boolean }) =>
         classNames(
           active ? 'text-white bg-accent' : 'text-high-emphesis',
-          'flex gap-2 px-4 items-center font-medium text-sm cursor-default select-none relative py-2 border border-secondary border-opacity-[0.15] whitespace-nowrap',
+          'flex gap-2 px-4 items-center font-medium text-sm cursor-pointer select-none relative py-2 border border-secondary border-opacity-[0.15] whitespace-nowrap',
           className
         )
       }

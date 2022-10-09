@@ -22,8 +22,8 @@ export const SelectButton: FC<SelectButtonProps> = forwardRef(
         ...props,
         ref,
         className: classNames(
-          open ? '!bg-primary' : '',
-          'relative w-auto pr-10 text-secondary font-bold',
+          open ? '!bg-primary ring-2 ring-offset-2 ring-accent' : '',
+          'relative pr-10 text-typo-primary font-bold py-3 px-4 rounded-md',
           error ? ERROR_INPUT_CLASSNAME : '',
           className
         ),
