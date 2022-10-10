@@ -1,10 +1,6 @@
 import {SideNav} from "./SideNav";
 import {DashboardHeader} from "./DashboardHeader";
-import {VestingTabs, NewVesting} from "./Transactions";
-
-// TODO: get current tab & sub-tab from url
-const tabTitle = "Transactions";
-const subTabTitle = "Vesting";
+import {VestingTabs, Overview} from "./Transactions";
 
 export const KynosDashboard = () => {
   return (<div className="font-poppins flex items-start">

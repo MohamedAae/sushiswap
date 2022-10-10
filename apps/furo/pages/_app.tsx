@@ -40,7 +40,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
       router.events.off('hashChangeComplete', handler)
     }
   }, [router.events])
-  const showLayout = router.pathname === '/kynos' ? false : true;
+  const showLayout = router.pathname.includes('/kynos')  ? false : true;
   return (
     <>
       <Head>

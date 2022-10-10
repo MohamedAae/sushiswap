@@ -22,7 +22,7 @@ export const AdditionalTerms = () => {
       />
     </div>
     <Form.Buttons>
-      <Button type="submit" className="w-full bg-accent text-white" disabled={false}>
+      <Button type="submit" className="w-full bg-accent text-white hover:ring-0" disabled={false}>
         Create Vesting Contract
       </Button>
     </Form.Buttons>

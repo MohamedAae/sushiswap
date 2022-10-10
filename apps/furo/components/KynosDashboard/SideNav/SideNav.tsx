@@ -2,16 +2,29 @@ import {useState} from "react";
 import {Typography} from "@sushiswap/ui";
 import {Transition} from "@headlessui/react";
 import {ChevronUpIcon, MenuAlt2Icon, XIcon} from "@heroicons/react/solid";
+import Link from "next/link";
+import {useRouter} from "next/router";
 
+// TODO: handle route urls better
 const items = [{
   name: "Dashboard",
+  url: "/kynos",
 }, {
-  name: "Transactions", subTabs: ["Vesting", "Payment",],
+  name: "Transactions", subTabs: ["Vesting", "Payment",], url: "/kynos/transactions",
 }];
 
+const activeIndex = (items, router) => {
+  const activeItem = items.find((item) => {
+    return item.url === router.pathname;
+  });
+  return items.indexOf(activeItem);
+}
+
+// TODO: automatically get active sub-tab
 export const Nav = (props) => {
+  const router = useRouter();
   const hideOnMobile = props.hideOnMobile ? props.hideOnMobile : false;
-  const [expanded, setExpanded] = useState(0);
+  const [expanded, setExpanded] = useState(activeIndex(items, router));
   const [activeSubTab, setActiveSubTab] = useState({[expanded]: 0});
 
   return(
@@ -24,7 +37,9 @@ export const Nav = (props) => {
                 className={`flex flex-wrap items-center justify-between p-4 my-2 cursor-pointer ${index === expanded ? 'bg-accent bg-opacity-10 border-r-4 border-accent rounded-l-md text-accent' : 'rounded-md text-white'} font-bold`}
                 onClick={() => {setExpanded(index); setActiveSubTab({[index]: 0})}}
               >
-                {item.name}
+                <Link href={item.url ? item.url : ''}>
+                  {item.name}
+                </Link>
                 {item.subTabs ? (expanded ? <ChevronUpIcon className="w-5 h-5"/>
                   : <ChevronUpIcon className="w-5 h-5 rotate-180"/>) : ''}
               </li>
@@ -36,7 +51,9 @@ export const Nav = (props) => {
                       <Typography
                         variant="sm"
                         className={`cursor-pointer p-2 rounded-md ${activeSubTab[index] === i ? "text-accent" : ""}`}>
-                        {subTab}
+                        <Link href={`${item.name.toLowerCase()}/${subTab.toLowerCase()}`}>
+                            {subTab}
+                        </Link>
                       </Typography>
                     </li>)
                   })}

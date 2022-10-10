@@ -1,12 +1,15 @@
 import {NextSeo} from 'next-seo'
-import {KynosDashboard} from "../../components/KynosDashboard";
+import {DashboardLayout} from "../../components/KynosDashboard";
+import {Typography} from "@sushiswap/ui";
 
 export default function KynosPage() {
 
   return (
       <>
         <NextSeo title="Dashboard Development"/>
-        <KynosDashboard />
+        <DashboardLayout>
+          <Typography className="text-typo-primary">Todo;</Typography>
+        </DashboardLayout>
       </>
   )
 }

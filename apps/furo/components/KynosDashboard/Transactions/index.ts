@@ -1,2 +1,2 @@
-export {NewVesting} from './NewVesting'
-export {VestingTabs} from './vesting'
+export {VestingTabs, NewVesting} from './vesting'
+export {PaymentTabs, Overview} from './payment'
