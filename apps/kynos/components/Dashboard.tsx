@@ -32,11 +32,11 @@ export const Dashboard: FC<{ chainId: number; address: string; showOutgoing: boo
   const [showActiveIncoming, setShowActiveIncoming] = useState(false)
 
   const { data: streams, isValidating: isValidatingStreams } = useSWR<Streams>(
-    `/furo/api/user/${chainId}/${address}/streams`,
+    `/kynos/api/user/${chainId}/${address}/streams`,
     fetcher
   )
   const { data: vestings, isValidating: isValidatingVestings } = useSWR<Vestings>(
-    `/furo/api/user/${chainId}/${address}/vestings`,
+    `/kynos/api/user/${chainId}/${address}/vestings`,
     fetcher
   )
   const [ids, tokens] = useMemo(() => {
@@ -74,7 +74,7 @@ export const Dashboard: FC<{ chainId: number; address: string; showOutgoing: boo
     () =>
       streams
         ? [
-            `/furo/api/rebases/${chainId}/${tokens.map((token) => token.address).join('/')}`,
+            `/kynos/api/rebases/${chainId}/${tokens.map((token) => token.address).join('/')}`,
             tokens.map((token) => token.address),
           ]
         : null,
@@ -98,7 +98,7 @@ export const Dashboard: FC<{ chainId: number; address: string; showOutgoing: boo
       <div className="flex justify-between">
         <div className="flex flex-col gap-3">
           <Typography variant="h2" weight={500} className="text-slate-200">
-            <span className="text-blue">Furo</span> Streaming
+            <span className="text-blue">Kynos</span> Streaming
           </Typography>
           <Typography className="text-slate-400">
             Earn, stream and automate your DAO salaries <br /> and token vesting with Furo.

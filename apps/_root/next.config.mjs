@@ -13,7 +13,7 @@ const {
   ANALYTICS_URL,
   DAO_URL,
   DOCS_URL,
-  FURO_URL,
+  KYNOS_URL,
   LANDING_URL,
   SWAP_URL,
   XSWAP_URL,
@@ -89,12 +89,12 @@ const nextConfig = {
         destination: `${BLOG_URL}/blog/:path*`,
       },
       {
-        source: '/furo',
-        destination: `${FURO_URL}/furo`,
+        source: '/kynos',
+        destination: `${KYNOS_URL}/kynos`,
       },
       {
-        source: '/furo/:path*',
-        destination: `${FURO_URL}/furo/:path*`,
+        source: '/kynos/:path*',
+        destination: `${KYNOS_URL}/kynos/:path*`,
       },
       {
         source: '/partner',

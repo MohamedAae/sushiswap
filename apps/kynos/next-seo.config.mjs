@@ -1,8 +1,8 @@
 // @ts-check
 /** @type {import('next-seo').DefaultSeoProps} */
 export default {
-  titleTemplate: '%s | Furo',
-  defaultTitle: 'Furo',
+  titleTemplate: '%s | Kynos',
+  defaultTitle: 'Kynos',
   description: 'Automate your DAO salaries and vesting schedules while earning interest from yield strategies.',
   //   canonical: 'https://sushi.com/furo',
   //   mobileAlternate: {

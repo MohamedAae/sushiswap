@@ -43,9 +43,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query: { c
   return {
     props: {
       fallback: {
-        [`/furo/api/stream/${chainId}/${id}`]: stream as StreamDTO,
-        [`/furo/api/stream/${chainId}/${id}/transactions`]: transactions as TransactionDTO[],
-        [`/furo/api/rebase/${chainId}/${stream.token.id}`]: rebases as RebaseDTO,
+        [`/kynos/api/stream/${chainId}/${id}`]: stream as StreamDTO,
+        [`/kynos/api/stream/${chainId}/${id}/transactions`]: transactions as TransactionDTO[],
+        [`/kynos/api/rebase/${chainId}/${stream.token.id}`]: rebases as RebaseDTO,
       },
     },
   }
@@ -73,16 +73,16 @@ const _Streams: FC = () => {
   const connect = useConnect()
   const { connecting, reconnecting } = useWalletState(!!connect.pendingConnector)
 
-  const { data: transactions } = useSWR<TransactionDTO[]>(`/furo/api/stream/${chainId}/${id}/transactions`, (url) =>
+  const { data: transactions } = useSWR<TransactionDTO[]>(`/kynos/api/stream/${chainId}/${id}/transactions`, (url) =>
     fetch(url).then((response) => response.json())
   )
 
-  const { data: furo } = useSWR<StreamDTO>(`/furo/api/stream/${chainId}/${id}`, (url) =>
+  const { data: furo } = useSWR<StreamDTO>(`/kynos/api/stream/${chainId}/${id}`, (url) =>
     fetch(url).then((response) => response.json())
   )
 
   const { data: rebase } = useSWR<RebaseDTO>(
-    () => (chainId && furo ? `/furo/api/rebase/${chainId}/${furo.token.id}` : null),
+    () => (chainId && furo ? `/kynos/api/rebase/${chainId}/${furo.token.id}` : null),
     (url) => fetch(url).then((response) => response.json())
   )
 

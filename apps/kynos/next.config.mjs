@@ -12,7 +12,7 @@ const withTranspileModules = transpileModules([
 // @ts-check
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/furo',
+  basePath: '/kynos',
   reactStrictMode: true,
   swcMinify: true,
 }

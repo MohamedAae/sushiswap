@@ -10,7 +10,7 @@ export enum AppType {
   Root = 'Explore Apps',
   Swap = 'Swap',
   xSwap = 'xSwap',
-  Furo = 'Streaming',
+  Kynos = 'Streaming',
   Blog = 'Blog',
   Legacy = 'Sushi 1.0',
   Internal = 'Internal',
@@ -23,7 +23,7 @@ export enum AppType {
 const LINK = {
   [AppType.Swap]: '/swap',
   [AppType.xSwap]: '/xswap',
-  [AppType.Furo]: '/furo',
+  [AppType.Kynos]: '/kynos',
   [AppType.Blog]: '/blog',
   [AppType.Legacy]: '/',
   [AppType.Internal]: '/internal',

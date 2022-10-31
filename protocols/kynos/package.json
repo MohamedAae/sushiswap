@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sushiswap/sushiswap.git",
-    "directory": "protocols/furo"
+    "directory": "protocols/kynos"
   },
   "license": "MIT",
   "author": "Sarang",
